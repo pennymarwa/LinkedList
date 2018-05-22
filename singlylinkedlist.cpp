@@ -13,12 +13,15 @@ struct node
 	};
 struct node *head = (struct node *)malloc(sizeof(struct node));
 
+// Add to the beginning
 void addNode(int n){
 	struct node *add = (struct node *)malloc(sizeof(struct node));
 	add->link = head;
 	head = add;
 	add->data = n;
 }
+
+// Add to the end
 int addEnd(int n)
 {
 	//std::cout << "1" << std::endl;
@@ -44,6 +47,8 @@ int addEnd(int n)
 	add1->link = NULL;
 	return true;
 }
+
+// Add at a desired location
 int add(int n)
 {
 	struct node *add1 = (struct node *)malloc(sizeof(struct node));
@@ -75,6 +80,8 @@ int add(int n)
 	add1->data = n;
 	return true;
 }
+
+// Delete in the beginning
 void DeleteStart()
 {
 	struct node *t2 = head;
@@ -94,6 +101,8 @@ void DeleteStart()
 		free(t2);
 	} 
 }
+
+// Delete in the end
 void DeleteEnd()
 {
 	struct node *t3 = head;
@@ -119,6 +128,8 @@ void DeleteEnd()
 		t3->link = NULL;
 	}	
 }
+
+// Adding at a desired location
 int Delete()
 {
 	struct node *t3 = head;
@@ -165,6 +176,8 @@ int Delete()
 		return false;
 	}
 }
+
+// print linkedlist
 void print()
 {
 	struct node *t = head;
@@ -181,6 +194,8 @@ void print()
 	}
 	//std::cout << "4" << std::endl;
 }
+
+// Reverse Linked List iterative
 int reverse()
 {
 	if(head == NULL)
@@ -233,6 +248,8 @@ int reverse()
 	}
 	return true;
 }
+
+// Reverse recursive
 void recursive_reverse(struct node *p)
 {
 	if(p)
@@ -241,6 +258,8 @@ void recursive_reverse(struct node *p)
 		std::cout << p->data << std::endl;
 	}
 }
+
+// Make list empty
 void MakeEmpty()
 {
 	struct node *t = head;
